@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class AuthorRequest extends FormRequest
+class BookRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -13,9 +13,8 @@ class AuthorRequest extends FormRequest
      */
     public function authorize()
     {
-        if ($this->path() == '/' || $this->path() == 'add' ||
-            $this->path() == 'get' || $this->path() == 'put' ||
-            $this->path() == 'edit'  || $this->path() == 'delete') {
+        if ($this->path() == 'book/' || $this->path() == 'book/add' ||
+            $this->path() == 'book/create') {
             return true;
         } else {
             return false;
@@ -30,9 +29,8 @@ class AuthorRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-			'age' => 'integer|min:0|max:150',
-			'nationality' => 'required'
+            'author_id' => 'required',
+            'titie' => 'string|maxlength:40|required',
         ];
     }
 }

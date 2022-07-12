@@ -1,6 +1,6 @@
 @extends('layouts.default')
 <style>
-    th {
+  th {
       background-color: #289ADC;
       color: white;
       padding: 5px 40px;
@@ -14,17 +14,17 @@
       text-align: center;
     }
 </style>
-@section('title', 'index.blade.php')
+@section('title', 'book.index.blade.php')
 
 @section('content')
 <table>
   <tr>
-    <th>data</th>
+    <th>Books</th>
   </tr>
-  @foreach ($authors as $author)
+  @foreach ($books as $book)
   <tr>
     <td>
-      {{$author->getDetail()}}
+      {{$book->getTitle()}}
     </td>
   </tr>
   @endforeach
