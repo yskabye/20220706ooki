@@ -8,22 +8,13 @@ use App\Http\Requests\AuthorRequest;
 
 class AuthorController extends Controller
 {
-    /*public function index()
+    public function index()
     {
         $authors = Author::all();
         //$items = Author::all();
         //dd($items); // 追加
         return view('index', ['authors' => $authors]);
-    }*/
-
-    public function index()
-    {
-        $data = [
-            'content' => '自由に入力してください',
-        ];
-        return view('index', $data);
     }
-
 	public function find()
     {
         return view('find', ['input' => '']);
